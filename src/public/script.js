@@ -50,7 +50,13 @@ const onSendButtonClick = async e => {
 
     const callPing = async () => {
         try {
-            const response = await axios.get(pingUrl);
+            const response = await axios.get(pingUrl, {
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
 
             results.push(response);
         } catch (err) {
@@ -58,7 +64,7 @@ const onSendButtonClick = async e => {
         }
     };
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 2; i++) {
         calls.push(callPing());
     }
 
@@ -110,6 +116,7 @@ const onResetButtonClick = e => {
     responses.unknown = 0;
     sendButton.disabled = false;
     resultDiv.innerHTML = '';
+    timeout = null;
 };
 
 document.addEventListener(

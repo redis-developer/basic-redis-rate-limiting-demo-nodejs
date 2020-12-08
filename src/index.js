@@ -27,7 +27,7 @@ const limiter = async (req, res, next) => {
             client: redisClient,
             expiry: 10
         }),
-        max: limit,
+        max: limit || 5,
         windowMs: 10 * 1000
     });
 
