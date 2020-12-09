@@ -20,15 +20,18 @@
         </style>
         <div class="container">
             <div class="jumbotron">
-                <h1 class="display-4">Rate limit</h1>
-                <p>Test request rate limits sending PING requests</p>
+                <h1 class="display-4">Redis rate limit demo</h1>
                 <p
                     >Each call 'Send 2 requests' starts 10 seconds countdown. You can call 'Send 2 requests' many times
                     in 10 seconds.</p
                 >
+                <p
+                    >Rate limit depends on how many processes are running on the server (E.g. on heroku it will be
+                    multiplied by 2)
+                </p>
                 <form>
                     <div class="form-group">
-                        <label for="limit-select">Enter limit of requests on server</label>
+                        <label for="limit-select">Select the limit of requests on the server</label>
                         <select id="limit-select" class="form-control">
                             <option>5</option>
                             <option>10</option>

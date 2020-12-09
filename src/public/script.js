@@ -53,8 +53,8 @@ const onSendButtonClick = async e => {
             const response = await axios.get(pingUrl, {
                 headers: {
                     'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
+                    Pragma: 'no-cache',
+                    Expires: '0'
                 }
             });
 
@@ -116,6 +116,8 @@ const onResetButtonClick = e => {
     responses.unknown = 0;
     sendButton.disabled = false;
     resultDiv.innerHTML = '';
+    timerDiv.innerHTML = '';
+    resetButton.disabled = true;
     timeout = null;
 };
 

@@ -1,0 +1,7 @@
+{
+    "name": "Redis Rate Limiting",
+    "description": "App for testing request rate limits in NodeJS, Express and Redis",
+    "repository": "https://github.com/RemoteCraftsmen/redis-rate-limiting",
+    "keywords": ["node", "express", "redis"],
+    "addons": ["heroku-redis:hobby-dev"]
+}

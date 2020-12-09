@@ -6,13 +6,18 @@ const RateLimit = require('express-rate-limit');
 const RedisStore = require('rate-limit-redis');
 const { promisify } = require('util');
 
-require('dotenv').config();
+if (process.env.NODE_ENV === 'development') {
+    require('dotenv').config();
+}
 
 const app = express();
-const redisClient = redis.createClient({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT
-});
+
+const redisClient = redis.createClient(
+    process.env.REDIS_URL || {
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT
+    }
+);
 
 redisClient.get = promisify(redisClient.get);
 redisClient.set = promisify(redisClient.set);
@@ -48,6 +53,6 @@ app.put('/api/set-limit', async (req, res) => {
     return res.send({ limit });
 });
 
-app.listen(process.env.PORT, () => {
-    console.log(`APP is listening on port: ${process.env.PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`APP is listening on port: ${process.env.PORT || 3000}`);
 });
