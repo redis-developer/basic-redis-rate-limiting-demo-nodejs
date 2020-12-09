@@ -20,23 +20,19 @@
         </style>
         <div class="container">
             <div class="jumbotron">
-                <h1 class="display-4">Redis rate limit demo</h1>
-                <p
-                    >Each call 'Send 2 requests' starts 10 seconds countdown. You can call 'Send 2 requests' many times
-                    in 10 seconds.</p
-                >
-                <p
-                    >Rate limit depends on how many processes are running on the server (E.g. on heroku it will be
-                    multiplied by 2)
-                </p>
+                <h1 class="display-4">REDIS rate limit demo</h1>
+
                 <form>
                     <div class="form-group">
-                        <label for="limit-select">Select the limit of requests on the server</label>
+                        <label for="limit-select">Select limit of requests on the server for each 10s (ie. 5 requests / 10 s)</label>
                         <select id="limit-select" class="form-control">
                             <option>5</option>
                             <option>10</option>
                             <option>20</option>
                         </select>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        Rate limit depends on how many processes are running on the server (ie. in heroku free dyno it will be multiply by 2)
                     </div>
                     <button id="test-button" type="button" class="btn btn-primary">Send 2 requests</button>
                     <button id="reset-button" type="button" class="btn btn-primary">Reset stats</button>
