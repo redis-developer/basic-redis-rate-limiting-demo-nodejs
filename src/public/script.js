@@ -11,7 +11,7 @@ const onSendButtonClick = e => {
     let counter = 10,
         requestInterval,
         counterInterval,
-        tick = 0,
+        tick = 1,
         requestsSentCount = 0,
         successfullRequests = 0,
         blockedRequests = 0;
