@@ -4,7 +4,6 @@ const path = require('path');
 const redis = require('redis');
 const RateLimit = require('express-rate-limit');
 const RedisStore = require('rate-limit-redis');
-const { promisify } = require('util');
 
 require('dotenv').config();
 
@@ -17,38 +16,21 @@ const redisClient = redis.createClient(
     }
 );
 
-redisClient.get = promisify(redisClient.get);
-redisClient.set = promisify(redisClient.set);
-
 app.use(bodyParser.json());
 
-const limiter = async (req, res, next) => {
-    const limit = await redisClient.get('ratelimit');
-
-    const limiter = new RateLimit({
-        store: new RedisStore({
-            client: redisClient,
-            expiry: 10
-        }),
-        max: limit || 5,
-        windowMs: 10 * 1000
-    });
-
-    return limiter(req, res, next);
-};
+const limiter = new RateLimit({
+    store: new RedisStore({
+        client: redisClient,
+        expiry: 10
+    }),
+    max: 10,
+    windowMs: 10 * 1000
+});
 
 app.use('/', express.static(path.join(__dirname, './public')));
 
 app.get('/api/ping', limiter, (req, res) => {
     return res.send('PONG');
-});
-
-app.put('/api/set-limit', async (req, res) => {
-    const { limit } = req.body;
-
-    await redisClient.set('ratelimit', parseInt(limit));
-
-    return res.send({ limit });
 });
 
 app.listen(process.env.PORT || 3000, () => {

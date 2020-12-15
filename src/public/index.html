@@ -10,36 +10,33 @@
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <style>
-            #timer,
-            #result {
-                margin: 1em 0;
-            }
-        </style>
         <div class="container">
-            <div class="jumbotron">
-                <h1 class="display-4">REDIS rate limit demo</h1>
-
-                <form>
-                    <div class="form-group">
-                        <label for="limit-select">Select limit of requests on the server for each 10s (ie. 5 requests / 10 s)</label>
-                        <select id="limit-select" class="form-control">
-                            <option>5</option>
-                            <option>10</option>
-                            <option>20</option>
-                        </select>
-                    </div>
-                    <div class="alert alert-warning" role="alert">
-                        Rate limit depends on how many processes are running on the server (ie. in heroku free dyno it will be multiply by 2)
-                    </div>
-                    <button id="test-button" type="button" class="btn btn-primary">Send 2 requests</button>
-                    <button id="reset-button" type="button" class="btn btn-primary">Reset stats</button>
-                </form>
-                <div id="timer"></div>
-                <div id="result"></div>
-            </div>
+            <h1 class="display-4 text-center">Rate Limiting Example</h1>
+            <form>
+                <div class="form-group">
+                    <p class="text-center lead" for="limit-select"
+                        >The server will allow sending <b>max 10 API requests within a 10 second window</b>. If you send
+                        more than that, all additional request will be blocked</p
+                    >
+                    <select id="limit-select" class="form-control">
+                        <option value="5">5 requests/10 sec</option>
+                        <option value="10">10 requests/10 sec</option>
+                        <option value="15">15 requests/10 sec</option>
+                        <option value="20">20 requests/10 sec</option>
+                    </select>
+                    <button id="test-button" type="button" class="btn btn-primary">Send</button>
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    Rate limit depends on how many processes are running on the server (ie. in heroku free dyno it will
+                    be multiply by 2)
+                </div>
+            </form>
+            <div id="timer"></div>
+            <div id="result"></div>
+            <button id="reset-button" type="button" class="btn btn-primary d-none">Clear history</button>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="script.js"></script>
