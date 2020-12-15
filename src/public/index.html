@@ -18,8 +18,8 @@
             <form>
                 <div class="form-group">
                     <p class="text-center lead" for="limit-select"
-                        >The server will allow sending <b>max 10 API requests within a 10 second window</b>. If you send
-                        more than that, all additional request will be blocked</p
+                        >The server will allow sending <b>max 10 API requests within a 10 second window</b>. <br />
+                        If you send more than that, all additional request will be blocked</p
                     >
                     <select id="limit-select" class="form-control">
                         <option value="5">5 requests/10 sec</option>
@@ -28,10 +28,6 @@
                         <option value="20">20 requests/10 sec</option>
                     </select>
                     <button id="test-button" type="button" class="btn btn-primary">Send</button>
-                </div>
-                <div class="alert alert-warning" role="alert">
-                    Rate limit depends on how many processes are running on the server (ie. in heroku free dyno it will
-                    be multiply by 2)
                 </div>
             </form>
             <div id="timer"></div>

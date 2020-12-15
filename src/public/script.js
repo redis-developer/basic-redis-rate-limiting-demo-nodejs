@@ -4,13 +4,13 @@ const limitSelect = document.querySelector('#limit-select');
 const timerDiv = document.querySelector('#timer');
 const resultDiv = document.querySelector('#result');
 const pingUrl = '/api/ping';
-let resultAmount = 0;
 
 const onSendButtonClick = e => {
     e.preventDefault();
 
     let counter = 10,
         requestInterval,
+        counterInterval,
         tick = 0,
         requestsSentCount = 0,
         successfullRequests = 0,
@@ -41,22 +41,13 @@ const onSendButtonClick = e => {
     timerDiv.innerHTML = `${counter} seconds left`;
 
     let result = document.createElement('p');
-
     result.classList.add('lead');
-    result.id = `result-${resultAmount}`;
 
     const sentMessage = document.createElement('span');
-
-    sentMessage.classList.add('sent');
-
     const successfullMessage = document.createElement('span');
-
-    successfullMessage.classList.add('successfull');
     successfullMessage.style.color = 'green';
 
     const blockedMessage = document.createElement('span');
-
-    blockedMessage.classList.add('blocked');
     blockedMessage.style.color = 'red';
 
     result.appendChild(sentMessage);
@@ -71,25 +62,24 @@ const onSendButtonClick = e => {
 
             requestsSentCount++;
 
-            const currentResultsSent = document.querySelector(`#result-${resultAmount} .sent`);
-
-            currentResultsSent.innerHTML = `Sent ${successfullRequests + blockedRequests} requests. `;
+            sentMessage.innerHTML = `Sent ${successfullRequests + blockedRequests} requests. `;
 
             if (successfullRequests) {
-                const currentResultsSuccessfull = document.querySelector(`#result-${resultAmount} .successfull`);
-
-                currentResultsSuccessfull.innerHTML = `Handled ${successfullRequests} requests. `;
+                successfullMessage.innerHTML = `Handled ${successfullRequests} requests. `;
             }
 
             if (blockedRequests) {
-                const currentResultsBlocked = document.querySelector(`#result-${resultAmount} .blocked`);
-
-                currentResultsBlocked.innerHTML = `${blockedRequests} requests blocked. `;
+                blockedMessage.innerHTML = `${blockedRequests} requests blocked. `;
             }
         }
 
         if (requestsSentCount === requestsToSend) {
+            resetButton.classList.remove('d-none');
+            sendButton.disabled = false;
+            limitSelect.disabled = false;
+            timerDiv.innerHTML = '';
             clearInterval(requestInterval);
+            clearInterval(counterInterval);
         }
 
         tick++;
@@ -103,16 +93,7 @@ const onSendButtonClick = e => {
         }
     }, 1000);
 
-    setTimeout(() => {
-        resetButton.classList.remove('d-none');
-        sendButton.disabled = false;
-        limitSelect.disabled = false;
-        timerDiv.innerHTML = '';
-        clearInterval(requestInterval);
-        clearInterval(counterInterval);
-
-        resultAmount++;
-    }, 10 * 1000 + 150);
+    setTimeout(() => {}, 10 * 1000 + 150);
 };
 
 const onResetButtonClick = e => {
