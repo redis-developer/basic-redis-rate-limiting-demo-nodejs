@@ -11,7 +11,7 @@ const onSendButtonClick = e => {
     let counter = 10,
         requestInterval,
         counterInterval,
-        tick = 1,
+        tick = 0,
         requestsSentCount = 0,
         successfullRequests = 0,
         blockedRequests = 0;
@@ -57,6 +57,8 @@ const onSendButtonClick = e => {
     resultDiv.prepend(result);
 
     requestInterval = setInterval(async () => {
+        tick++;
+
         if (tick % whenToSendTick === 0) {
             await callPing();
 
@@ -81,8 +83,6 @@ const onSendButtonClick = e => {
             clearInterval(requestInterval);
             clearInterval(counterInterval);
         }
-
-        tick++;
     }, 100);
 
     counterInterval = setInterval(() => {
