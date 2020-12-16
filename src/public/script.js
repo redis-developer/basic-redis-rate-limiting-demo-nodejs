@@ -11,19 +11,21 @@ const onSendButtonClick = e => {
     let counter = 10,
         requestInterval,
         counterInterval,
-        tick = 0,
-        requestsSentCount = 0,
-        successfullRequests = 0,
+        tick = -1,
+        requestsSent = 0,
+        successfulRequests = 0,
         blockedRequests = 0;
 
     const requestsToSend = parseInt(limitSelect.value);
-    const whenToSendTick = Math.ceil(100 / requestsToSend);
+    const whenToSendTick = Math.floor(100 / requestsToSend);
 
     sendButton.disabled = true;
     limitSelect.disabled = true;
 
     const callPing = async () => {
         try {
+            requestsSent++;
+
             await axios.get(pingUrl, {
                 headers: {
                     'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -32,56 +34,59 @@ const onSendButtonClick = e => {
                 }
             });
 
-            successfullRequests++;
+            successfulRequests++;
         } catch (err) {
             blockedRequests++;
         }
     };
 
-    timerDiv.innerHTML = `${counter} seconds left`;
+    timerDiv.innerHTML = `Wait ${counter} seconds to test again`;
+    timerDiv.classList.remove('d-none');
 
     let result = document.createElement('p');
     result.classList.add('lead');
 
     const sentMessage = document.createElement('span');
-    const successfullMessage = document.createElement('span');
-    successfullMessage.style.color = 'green';
+    const successfulMessage = document.createElement('span');
+    successfulMessage.style.color = 'green';
 
     const blockedMessage = document.createElement('span');
     blockedMessage.style.color = 'red';
 
     result.appendChild(sentMessage);
-    result.appendChild(successfullMessage);
+    result.appendChild(successfulMessage);
     result.appendChild(blockedMessage);
 
     resultDiv.prepend(result);
 
-    requestInterval = setInterval(async () => {
+    requestInterval = setInterval(() => {
         tick++;
 
-        if (tick % whenToSendTick === 0) {
-            await callPing();
-
-            requestsSentCount++;
-
-            sentMessage.innerHTML = `Sent ${successfullRequests + blockedRequests} requests. `;
-
-            if (successfullRequests) {
-                successfullMessage.innerHTML = `Handled ${successfullRequests} requests. `;
-            }
-
-            if (blockedRequests) {
-                blockedMessage.innerHTML = `${blockedRequests} requests blocked. `;
-            }
+        if (tick % whenToSendTick === 0 && requestsSent < requestsToSend) {
+            callPing();
         }
 
-        if (requestsSentCount === requestsToSend) {
+        sentMessage.innerHTML = `Sent ${requestsSent} requests. `;
+
+        if (successfulRequests) {
+            successfulMessage.innerHTML = `Handled ${successfulRequests} requests. `;
+        }
+
+        if (blockedRequests) {
+            blockedMessage.innerHTML = `${blockedRequests} requests blocked. `;
+        }
+
+        if (tick === 100) {
             resetButton.classList.remove('d-none');
             sendButton.disabled = false;
             limitSelect.disabled = false;
             timerDiv.innerHTML = '';
-            clearInterval(requestInterval);
+            timerDiv.classList.add('d-none');
             clearInterval(counterInterval);
+        }
+
+        if (successfulRequests + blockedRequests === requestsToSend && tick > 100 || tick > 200) {
+            clearInterval(requestInterval);
         }
     }, 100);
 
@@ -89,17 +94,14 @@ const onSendButtonClick = e => {
         counter--;
 
         if (counter) {
-            timerDiv.innerHTML = `${counter} seconds left`;
+            timerDiv.innerHTML = `Wait ${counter} seconds to test again`;
         }
     }, 1000);
-
-    setTimeout(() => {}, 10 * 1000 + 150);
 };
 
 const onResetButtonClick = e => {
     e.preventDefault();
 
-    sendButton.disabled = false;
     resultDiv.innerHTML = '';
     resetButton.classList.add('d-none');
 };
@@ -113,5 +115,4 @@ document.addEventListener(
 );
 
 sendButton.addEventListener('click', onSendButtonClick);
-
 resetButton.addEventListener('click', onResetButtonClick);
