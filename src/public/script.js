@@ -73,7 +73,7 @@ const onSendButtonClick = e => {
         }
 
         if (blockedRequests) {
-            blockedMessage.innerHTML = `${blockedRequests} requests blocked. `;
+            blockedMessage.innerHTML = `Blocked ${blockedRequests} requests. `;
         }
 
         if (tick === 100) {
