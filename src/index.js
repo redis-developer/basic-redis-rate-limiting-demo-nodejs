@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
 const redis = require('redis');
 const RateLimit = require('express-rate-limit');
@@ -15,8 +14,6 @@ const redisClient = redis.createClient(
         port: process.env.REDIS_PORT
     }
 );
-
-app.use(bodyParser.json());
 
 const limiter = new RateLimit({
     store: new RedisStore({

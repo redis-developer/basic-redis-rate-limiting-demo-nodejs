@@ -13,3 +13,12 @@
 #limit-select {
     max-width: 280px;
 }
+
+@media screen and (min-width: 680px) {
+    body {
+        background-image: url('/RedisLabs_Illustration.svg');
+        background-repeat: no-repeat;
+        background-size: 28% auto;
+        background-position: 104% -70px;
+    }
+}
