@@ -29,6 +29,4 @@ npm run dev
 
 ## Heroku deployment (1 click install)
 
-<a href="https://heroku.com/deploy?template=https://github.com/RemoteCraftsmen/redis-rate-limiting">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
