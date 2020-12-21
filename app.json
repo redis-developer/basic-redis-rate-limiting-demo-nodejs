@@ -5,7 +5,7 @@
     "keywords": ["node", "express", "redis"],
     "env": {
         "REDIS_ENDPOINT_URI": {
-            "description": "Redis server URI in format redis://host:port",
+            "description": "Redis server URI",
             "required": true
         },
         "REDIS_PASSWORD": {
