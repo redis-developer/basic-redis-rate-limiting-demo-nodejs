@@ -33,15 +33,15 @@ To make deploys work, you need to create free account in https://redislabs.com/t
 
 REDIS_ENDPOINT_URI should start with prefix `redis://`
 
-### Google cloud run deployment
+### Google Cloud Run
 
 [![Run on Google
 Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/RemoteCraftsmen/redis-rate-limiting.git)
 
-### Heroku deployment (1 click install)
+### Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Vercel deployment
+### Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FRemoteCraftsmen%2Fredis-rate-limiting&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD)

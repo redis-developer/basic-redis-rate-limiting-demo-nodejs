@@ -12,7 +12,7 @@
     "scripts": {
         "dev": "nodemon src/index.js"
     },
-    "author": "RemoteCraftsmen",
+    "author": "RemoteCraftsmen.com",
     "license": "MIT",
     "dependencies": {
         "dotenv": "^8.2.0",
