@@ -6,14 +6,15 @@ const RedisStore = require('rate-limit-redis');
 
 require('dotenv').config();
 
+const { REDIS_ENDPOINT_URI, REDIS_HOST, REDIS_PORT, REDIS_PASSWORD, PORT } = process.env;
+
 const app = express();
 
-const redisClient = redis.createClient(
-    process.env.REDIS_URL || {
-        host: process.env.REDIS_HOST,
-        port: process.env.REDIS_PORT
-    }
-);
+const redisEndpointUri = REDIS_ENDPOINT_URI || `redis://${REDIS_HOST}:${REDIS_PORT}`;
+
+const redisClient = redis.createClient(redisEndpointUri, {
+    password: REDIS_PASSWORD
+});
 
 const limiter = new RateLimit({
     store: new RedisStore({
@@ -30,6 +31,8 @@ app.get('/api/ping', limiter, (req, res) => {
     return res.send('PONG');
 });
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`APP is listening on port: ${process.env.PORT || 3000}`);
+const port = PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`App listening on port ${port}`);
 });

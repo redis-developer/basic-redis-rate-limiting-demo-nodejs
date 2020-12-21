@@ -3,12 +3,19 @@
     "description": "App for testing request rate limits in NodeJS, Express and Redis",
     "repository": "https://github.com/RemoteCraftsmen/redis-rate-limiting",
     "keywords": ["node", "express", "redis"],
-    "addons": ["heroku-redis:hobby-dev"],
     "env": {
-        "WEB_CONCURRENCY": {
-            "description": "Number of processes to run",
-            "value": "1",
+        "REDIS_ENDPOINT_URI": {
+            "description": "Redis server URI in format redis://host:port",
             "required": true
+        },
+        "REDIS_PASSWORD": {
+            "description": "Redis password",
+            "required": true
+        },
+        "WEB_CONCURRENCY": {
+            "description": "Number of Node processes (on Heroku)",
+            "required": false,
+            "value": "1"
         }
     }
 }
