@@ -3,19 +3,19 @@
   "description": "Simple app that demonstrates rate-limiting feature using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
-  "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs",
-  "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/archive/main.zip",
+  "repo_url": "https://github.com/RemoteCraftsmen/redis-rate-limiting",
+  "download_url": "https://github.com/RemoteCraftsmen/redis-rate-limiting/archive/main.zip",
   "hosted_url": "",
   "quick_deploy": "true",
   "deploy_buttons": [
     {
-      "heroku": "https://heroku.com/deploy?template=https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs"
+      "heroku": "https://heroku.com/deploy?template=https://github.com/RemoteCraftsmen/redis-rate-limiting"
     },
     {
       "vercel": "https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fredis-developer%2Fbasic-redis-rate-limiting-demo-nodejs&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD&envDescription=REDIS_ENDPOINT_URI%20is%20required%20at%20least%20to%20connect%20to%20Redis%20clouding%20server"
     },
     {
-      "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs.git"
+      "Google": "https://deploy.cloud.run/?git_repo=https://github.com/RemoteCraftsmen/redis-rate-limiting.git"
     }
   ],
   "language": ["JavaScript"],
@@ -23,7 +23,7 @@
   "redis_features": [],
   "redis_modules": ["rate-limit-redis"],
   "app_image_urls": [
-    "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true"
+    "https://github.com/RemoteCraftsmen/redis-rate-limiting/blob/main/preview.png?raw=true"
   ],
   "youtube_url": "",
   "special_tags": [],
