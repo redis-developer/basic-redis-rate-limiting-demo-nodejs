@@ -19,9 +19,9 @@
     }
   ],
   "language": ["JavaScript"],
-  "redis_commands": [],
+  "redis_commands": ["PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"],
   "redis_features": [],
-  "redis_modules": [],
+  "redis_modules": ["rate-limit-redis"],
   "app_image_urls": [
     "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true"
   ],
