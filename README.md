@@ -20,7 +20,7 @@ X-RateLimit-Remaining: 9
 
 On the 10th run server should return an HTTP status code of **429 Too Many Requests**
 
-###Available commands
+### Available commands
 
 ```
 "PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"
