@@ -2,12 +2,6 @@
 
 ![alt text](https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true)
 
-## Prerequisites
-
--   Node - v12.19.0
--   NPM - v6.14.8
--   Docker - v19.03.13 (optional)
-
 ## How it works
 This app has been build usigng `exoress-rate-limit` and `rate-limit-redis` library which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10 sec)
 
@@ -25,8 +19,15 @@ On the 10th run server should return an HTTP status code of **429 Too Many Reque
 ```
 "PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"
 ```
+## Hot to run it locally?
 
-## Local installation
+### Prerequisites
+
+-   Node - v12.19.0
+-   NPM - v6.14.8
+-   Docker - v19.03.13 (optional)
+
+### Local installation
 
 ```
 git clone https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/
