@@ -16,9 +16,9 @@
 
 @media screen and (min-width: 680px) {
     body {
-        background-image: url('/RedisLabs_Illustration.svg');
+        background-image: url('/RedisLabsIllustration.svg');
         background-repeat: no-repeat;
-        background-size: 28% auto;
-        background-position: 104% -70px;
+        background-size: 340px;
+        background-position: right top;
     }
 }
