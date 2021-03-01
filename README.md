@@ -3,6 +3,7 @@
 ![alt text](https://github.com/RemoteCraftsmen/redis-rate-limiting/blob/main/preview.png?raw=true)
 
 ## How it works
+
 This app has been build usigng `exoress-rate-limit` and `rate-limit-redis` library which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10 sec)
 
 The application will return after each request the following headers. That will let the user know how many requests they have remaining before the run over the limit.
@@ -19,6 +20,7 @@ On the 10th run server should return an HTTP status code of **429 Too Many Reque
 ```
 "PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"
 ```
+
 ## Hot to run it locally?
 
 ### Prerequisites
@@ -36,7 +38,7 @@ git clone https://github.com/RemoteCraftsmen/redis-rate-limiting/
 cp .env.example .env
 
 # install dependencies
-npm cache clean && npm install
+npm install
 
 # run docker compose or install redis manually
 docker network create global
@@ -46,9 +48,18 @@ npm run dev
 
 ```
 
+### Env variables:
+
+-   PORT - port that server is listening on.
+-   REDIS_HOST - host for redis instance. Can be with `redis://` or without.
+-   REDIS_PORT - port for redis instance.
+-   REDIS_PASSWORD - password for redis. Running redis by docker-compose, there's no password. Running by https://redislabs.com/try-free/ you have to pass this variable.
+-   REDIS_ENDPOINT_URI - redis password, port and host encoded in redis uri take precedence over other environment variables. Can be with `redis://` or without.
+-   COMPOSE_PROJECT_NAME - only for docker-compose to set project name.
+
 ## Deployment
 
-To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis' instance informations - REDIS_ENDPOINT_URI and REDIS_PASSWORD. You must pass them as environmental variables.
+To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis' instance informations - REDIS_ENDPOINT_URI and REDIS_PASSWORD. You must pass them as environmental variables (in .env file or by server config, like `Heroku Config Variables`).
 
 ### Google Cloud Run
 

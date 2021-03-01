@@ -8,9 +8,9 @@
         "Redis",
         "Rate limit"
     ],
-    "main": "src/index.js",
+    "main": "server/index.js",
     "scripts": {
-        "dev": "nodemon src/index.js"
+        "dev": "nodemon server/index.js"
     },
     "author": "RemoteCraftsmen.com",
     "license": "MIT",
