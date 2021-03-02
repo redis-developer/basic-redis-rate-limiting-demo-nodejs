@@ -54,7 +54,7 @@ npm run dev
 -   REDIS_HOST - host for redis instance. Can be with `redis://` or without.
 -   REDIS_PORT - port for redis instance.
 -   REDIS_PASSWORD - password for redis. Running redis by docker-compose, there's no password. Running by https://redislabs.com/try-free/ you have to pass this variable.
--   REDIS_ENDPOINT_URI - redis password, port and host encoded in redis uri take precedence over other environment variables. Can be with `redis://` or without.
+-   REDIS_ENDPOINT_URI - redis port and host encoded in redis uri take precedence over other environment variables. Can be with `redis://` or without.
 -   COMPOSE_PROJECT_NAME - only for docker-compose to set project name.
 
 ## Deployment
