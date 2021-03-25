@@ -1,6 +1,6 @@
 # Redis rate-limiting example
 
-![alt text](https://github.com/RemoteCraftsmen/redis-rate-limiting/blob/main/preview.png?raw=true)
+![alt text](https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true)
 
 ## How it works
 
@@ -32,7 +32,7 @@ On the 10th run server should return an HTTP status code of **429 Too Many Reque
 ### Local installation
 
 ```
-git clone https://github.com/RemoteCraftsmen/redis-rate-limiting/
+git clone https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/
 
 # copy file and set proper data inside
 cp .env.example .env
@@ -64,7 +64,7 @@ To make deploys work, you need to create free account in https://redislabs.com/t
 ### Google Cloud Run
 
 [![Run on Google
-Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/RemoteCraftsmen/redis-rate-limiting.git)
+Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs.git)
 
 ### Heroku
 
@@ -72,4 +72,4 @@ Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=
 
 ### Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/RemoteCraftsmen/redis-rate-limiting&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs&env=REDIS_ENDPOINT_URI,REDIS_PASSWORD)

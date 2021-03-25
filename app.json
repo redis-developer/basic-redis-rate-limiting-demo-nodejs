@@ -1,7 +1,7 @@
 {
     "name": "Redis Rate Limiting",
     "description": "App for testing request rate limits in NodeJS, Express and Redis",
-    "repository": "https://github.com/RemoteCraftsmen/redis-rate-limiting",
+    "repository": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs",
     "keywords": ["node", "express", "redis"],
     "env": {
         "REDIS_ENDPOINT_URI": {
