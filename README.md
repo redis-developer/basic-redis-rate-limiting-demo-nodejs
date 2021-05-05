@@ -2,6 +2,12 @@
 
 ![alt text](https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true)
 
+# Overview video
+
+Here's a short video that explains the project and how it uses Redis:
+
+[![Watch the video on YouTube](docs/YTThumbnail.png)](https://www.youtube.com/watch?v=Fk1rVm-iaDo)
+
 ## How it works
 
 This app has been build usigng `exoress-rate-limit` and `rate-limit-redis` library which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10 sec)
