@@ -28,5 +28,5 @@
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
   "verticals": ["Analitics"],
-  "markdown": "https://raw.githubusercontent.com/redislabs-training/redis-sitesearch/master/README.md"
+  "markdown": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/raw/main/README.md"
 }
