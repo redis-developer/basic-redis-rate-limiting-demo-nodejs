@@ -1,4 +1,4 @@
-# Redis rate-limiting example
+# Rate Limiting Demo app using NodeJS and Redis
 
 ![alt text](https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true)
 
