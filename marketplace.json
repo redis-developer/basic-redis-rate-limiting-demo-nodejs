@@ -1,6 +1,6 @@
 {
-  "app_name": "Rate Limiting Demo app in NodeJS",
-  "description": "Rate Limiting Demo app in NodeJS using Redis",
+  "app_name": "Rate Limiting app in NodeJS",
+  "description": "Rate Limiting app in NodeJS using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs",
