@@ -1,11 +1,9 @@
-# Rate Limiting Demo app using NodeJS and Redis
+# Tutorial: Rate Limiting Demo app in NodeJS 
 
+## Technical Stack
 
-# Overview video
-
-Here's a short video that explains the project and how it uses Redis:
-
-[![Watch the video on YouTube](https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
+- Frontend: NodeJS, NPM
+- Backend: Redis(RedisJSON)
 
 ## How it works
 
