@@ -1,4 +1,4 @@
-# Tutorial: Rate Limiting Demo app in NodeJS 
+# Tutorial: Rate Limiting app in NodeJS 
 
 ## Technical Stack
 
@@ -7,7 +7,7 @@
 
 ## How it works
 
-This app has been build usigng `exoress-rate-limit` and `rate-limit-redis` library which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10 sec)
+This app has been build using `exoress-rate-limit` and `rate-limit-redis` library which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10 sec)
 
 The application will return after each request the following headers. That will let the user know how many requests they have remaining before the run over the limit.
 
