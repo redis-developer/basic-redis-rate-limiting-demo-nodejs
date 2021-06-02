@@ -1,6 +1,6 @@
 {
-  "app_name": "Redis rate-limiting example",
-  "description": "Simple app that demonstrates rate-limiting feature using Redis",
+  "app_name": "Rate Limiting Demo app using NodeJS and Redis",
+  "description": "Rate Limiting Demo app in NodeJS using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs",
@@ -23,10 +23,10 @@
   "redis_features": [],
   "redis_modules": ["rate-limit-redis"],
   "app_image_urls": [
-    "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true"
+    "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/preview.png?raw=true"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
   "verticals": ["Analitics"],
-  "markdown": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/raw/main/README.md"
+  "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/README.md"
 }
