@@ -2,8 +2,8 @@
 
 ## Technical Stack
 
-- Frontend: NodeJS, NPM
-- Backend: Redis(RedisJSON)
+- Frontend: Next.js
+- Backend - NodeJS, ExpressJS, Redis
 
 ## How it works
 
