@@ -1,5 +1,5 @@
 {
-  "app_name": "Rate Limiting Demo app using NodeJS and Redis",
+  "app_name": "Rate Limiting Demo app in NodeJS",
   "description": "Rate Limiting Demo app in NodeJS using Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
