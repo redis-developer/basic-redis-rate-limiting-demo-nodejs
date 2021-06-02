@@ -1,12 +1,11 @@
 # Rate Limiting Demo app using NodeJS and Redis
 
-![alt text](https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/blob/main/preview.png?raw=true)
 
 # Overview video
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/raw/main/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
+[![Watch the video on YouTube](https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/docs/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
 
 ## How it works
 
