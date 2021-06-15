@@ -27,6 +27,6 @@
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
-  "verticals": ["Analitics"],
+  "verticals": ["Analytics"],
   "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/README.md"
 }
