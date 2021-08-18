@@ -21,13 +21,13 @@
   ],
   "language": ["JavaScript"],
   "redis_commands": ["PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"],
-  "redis_features": [],
+  "redis_features": ["Rate Limiting"],
   "redis_modules": [""],
   "app_image_urls": [
     "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/preview.png?raw=true"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
-  "verticals": ["Analytics"],
+  "verticals": ["Others"],
   "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/README.md"
 }
