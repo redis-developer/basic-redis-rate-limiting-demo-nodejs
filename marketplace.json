@@ -2,7 +2,7 @@
   "app_name": "Rate Limiting app in NodeJS",
   "description": "Rate Limiting app in NodeJS using Redis",
   "type": "Building Block",
-  "contributed_by": "Redis Labs",
+  "contributed_by": "Redis",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs",
   "preview_image_url": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/master/images/app_preview_image.png",
   "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/archive/main.zip",
@@ -19,15 +19,31 @@
       "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-nodejs.git"
     }
   ],
-  "language": ["JavaScript"],
-  "redis_commands": ["PEXPIRE", "MULTI", "DEL", "PTTL", "EXEC", "DECR", "INCR"],
-  "redis_features": ["Rate Limiting"],
-  "redis_modules": [""],
+  "language": [
+    "JavaScript"
+  ],
+  "redis_commands": [
+    "PEXPIRE",
+    "MULTI",
+    "DEL",
+    "PTTL",
+    "EXEC",
+    "DECR",
+    "INCR"
+  ],
+  "redis_use_cases": [
+    "Rate Limiting"
+  ],
+  "redis_features": [
+    ""
+  ],
   "app_image_urls": [
     "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/preview.png?raw=true"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
-  "verticals": ["Others"],
+  "verticals": [
+    "Others"
+  ],
   "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-nodejs/main/README.md"
 }
